@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRIME SHOP | Free Fire Marketplace</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            PRIME<span>SHOP</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#topup">Top Up</a>
+            <a href="#accounts">Accounts</a>
+            <a href="#about">About</a>
+        </div>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                ⚡ PRIME SHOP MARKETPLACE
+            </div>
+
+            <h1>
+                LEVEL UP YOUR<br>
+                <span>FREE FIRE GAME</span>
+            </h1>
+
+            <p>
+                Buy Free Fire top-ups and gaming accounts
+                through PRIME SHOP. Browse our marketplace,
+                add your products to cart and place your order
+                directly through WhatsApp.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#topup" class="primary-btn">
+                    SHOP TOP UP
+                </a>
+
+                <a href="#accounts" class="secondary-btn">
+                    BROWSE ACCOUNTS
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+    <div class="trust">
+
+        <div class="trust-item">
+            <strong>⚡ Fast Ordering</strong>
+            <span>Quick order processing</span>
+        </div>
+
+        <div class="trust-item">
+            <strong>🎮 Gaming Marketplace</strong>
+            <span>Top-ups & accounts</span>
+        </div>
+
+        <div class="trust-item">
+            <strong>💬 WhatsApp Support</strong>
+            <span>Direct customer communication</span>
+        </div>
+
+    </div>
+
+
+    <!-- TOP UP -->
+    <section class="section" id="topup">
+
+        <div class="section-heading">
+            <div>
+                <h2>💎 Free Fire Top Up</h2>
+                <p>Choose your preferred diamond package.</p>
+            </div>
+        </div>
+
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <div class="product-image">💎</div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">TOP UP</div>
+
+                    <h3 class="product-title">
+                        100 Diamonds
+                    </h3>
+
+                    <p class="product-description">
+                        Free Fire diamond top-up package.
+                    </p>
+
+                    <div class="price">
+                        ₦1,000
+                    </div>
+
+                    <button class="add-button"
+                        onclick="addToCart('100 Diamonds',1000)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">💎</div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">TOP UP</div>
+
+                    <h3 class="product-title">
+                        310 Diamonds
+                    </h3>
+
+                    <p class="product-description">
+                        Free Fire diamond top-up package.
+                    </p>
+
+                    <div class="price">
+                        ₦3,000
+                    </div>
+
+                    <button class="add-button"
+                        onclick="addToCart('310 Diamonds',3000)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">💎</div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">POPULAR</div>
+
+                    <h3 class="product-title">
+                        520 Diamonds
+                    </h3>
+
+                    <p class="product-description">
+                        Popular Free Fire diamond package.
+                    </p>
+
+                    <div class="price">
+                        ₦5,000
+                    </div>
+
+                    <button class="add-button"
+                        onclick="addToCart('520 Diamonds',5000)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">💎</div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">PREMIUM</div>
+
+                    <h3 class="product-title">
+                        1060 Diamonds
+                    </h3>
+
+                    <p class="product-description">
+                        Large Free Fire diamond package.
+                    </p>
+
+                    <div class="price">
+                        ₦10,000
+                    </div>
+
+                    <button class="add-button"
+                        onclick="addToCart('1060 Diamonds',10000)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCOUNTS -->
+    <section class="section" id="accounts">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>🎮 Free Fire Accounts</h2>
+                <p>
+                    Browse available accounts in the PRIME SHOP marketplace.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="account-toolbar">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search accounts..."
+                oninput="filterAccounts()"
+            >
+
+            <select
+                id="priceFilter"
+                onchange="filterAccounts()">
+
+                <option value="all">
+                    All Prices
+                </option>
+
+                <option value="under20">
+                    Under ₦20,000
+                </option>
+
+                <option value="20to50">
+                    ₦20,000 - ₦50,000
+                </option>
+
+                <option value="over50">
+                    Above ₦50,000
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="product-grid" id="accountsGrid">
+
+
+            <!-- ACCOUNT 1 -->
+            <div
+                class="product-card account-card"
+                data-name="level 45 starter account"
+                data-price="12000">
+
+                <div class="account-image">
+
+                    🎮
+
+                    <span class="account-status">
+                        AVAILABLE
+                    </span>
+
+                    <span class="account-id">
+                        #PS001
+                    </span>
+
+                </div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">
+                        STARTER ACCOUNT
+                    </div>
+
+                    <h3 class="product-title">
+                        Level 45 Account
+                    </h3>
+
+                    <p class="product-description">
+                        Starter collection with selected
+                        characters and cosmetic items.
+                    </p>
+
+                    <div class="stats">
+                        <span class="stat">LVL 45</span>
+                        <span class="stat">12 Characters</span>
+                        <span class="stat">8 Skins</span>
+                    </div>
+
+                    <div class="price">
+                        ₦12,000
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart('Free Fire Account #PS001',12000)">
+                        BUY ACCOUNT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT 2 -->
+            <div
+                class="product-card account-card"
+                data-name="elite collection account"
+                data-price="25000">
+
+                <div class="account-image">
+
+                    🔥
+
+                    <span class="account-status">
+                        AVAILABLE
+                    </span>
+
+                    <span class="account-id">
+                        #PS002
+                    </span>
+
+                </div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">
+                        ELITE ACCOUNT
+                    </div>
+
+                    <h3 class="product-title">
+                        Elite Collection
+                    </h3>
+
+                    <p class="product-description">
+                        Higher-level account with multiple
+                        characters and weapon cosmetics.
+                    </p>
+
+                    <div class="stats">
+                        <span class="stat">LVL 58</span>
+                        <span class="stat">25 Characters</span>
+                        <span class="stat">30 Skins</span>
+                    </div>
+
+                    <div class="price">
+                        ₦25,000
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart('Free Fire Account #PS002',25000)">
+                        BUY ACCOUNT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT 3 -->
+            <div
+                class="product-card account-card"
+                data-name="legendary collection account"
+                data-price="45000">
+
+                <div class="account-image">
+
+                    👑
+
+                    <span class="account-status">
+                        AVAILABLE
+                    </span>
+
+                    <span class="account-id">
+                        #PS003
+                    </span>
+
+                </div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">
+                        LEGENDARY
+                    </div>
+
+                    <h3 class="product-title">
+                        Legendary Collection
+                    </h3>
+
+                    <p class="product-description">
+                        Premium collection with numerous
+                        characters, skins and bundles.
+                    </p>
+
+                    <div class="stats">
+                        <span class="stat">LVL 70</span>
+                        <span class="stat">40 Characters</span>
+                        <span class="stat">70+ Skins</span>
+                    </div>
+
+                    <div class="price">
+                        ₦45,000
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart('Free Fire Account #PS003',45000)">
+                        BUY ACCOUNT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT 4 -->
+            <div
+                class="product-card account-card"
+                data-name="rare premium account"
+                data-price="65000">
+
+                <div class="account-image">
+
+                    💀
+
+                    <span class="account-status">
+                        AVAILABLE
+                    </span>
+
+                    <span class="account-id">
+                        #PS004
+                    </span>
+
+                </div>
+
+                <div class="product-body">
+
+                    <div class="product-tag">
+                        ULTRA PREMIUM
+                    </div>
+
+                    <h3 class="product-title">
+                        Rare Collection
+                    </h3>
+
+                    <p class="product-description">
+                        High-value account with a large
+                        collection of cosmetic items.
+                    </p>
+
+                    <div class="stats">
+                        <span class="stat">LVL 75</span>
+                        <span class="stat">50 Characters</span>
+                        <span class="stat">100+ Skins</span>
+                    </div>
+
+                    <div class="price">
+                        ₦65,000
+                    </div>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart('Free Fire Account #PS004',65000)">
+                        BUY ACCOUNT
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+
+        <div class="about-content">
+
+            <h2>About PRIME SHOP</h2>
+
+            <p>
+                PRIME SHOP is a Free Fire gaming marketplace.
+                Customers can browse available products,
+                add products to their cart and send their
+                order directly to PRIME SHOP through WhatsApp.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <strong>PRIME SHOP</strong>
+
+        <p>
+            Free Fire Gaming Marketplace
+        </p>
+
+        <p>
+            © 2026 PRIME SHOP. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- CART -->
+    <div class="overlay" id="cartOverlay">
+
+        <div class="cart-box">
+
+            <div class="cart-header">
+
+                <h2>🛒 Your Cart</h2>
+
+                <button
+                    class="close"
+                    onclick="closeCart()">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                class="cart-list"
+                id="cartList">
+
+                <div class="empty-cart">
+                    Your cart is empty.
+                </div>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <span>
+                    ₦<span id="cartTotal">0</span>
+                </span>
+
+            </div>
+
+
+            <h3 class="form-title">
+                Customer Information
+            </h3>
+
+
+            <div class="form-group">
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+             <div class="form-group">
+
+                <label>Free Fire UID</label>
+
+                <input
+                    type="text"
+                    id="customerUID"
+                    placeholder="Enter your Free Fire UID"
+                >
+
+            </div> 
+
+
+            <div class="form-group">
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="08012345678"
+                >
+
+            </div>
+
+
+            <button
+                class="whatsapp-button"
+                onclick="sendWhatsAppOrder()">
+
+                📲 SEND ORDER TO PRIME SHOP
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
